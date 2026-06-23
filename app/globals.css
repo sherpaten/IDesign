@@ -1,0 +1,86 @@
+﻿@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-[#030712] text-slate-100 antialiased selection:bg-blue-600/30 selection:text-blue-200 overflow-x-hidden;
+  }
+}
+
+/* Navbar Layout */
+.nav-header { @apply fixed top-0 left-0 w-full z-40 bg-[#030712]/70 backdrop-blur-md border-b border-blue-950/40; }
+.nav-container { @apply max-w-6xl mx-auto px-6 h-20 flex items-center justify-between; }
+.nav-logo-wrapper { @apply flex items-center gap-3 bg-transparent border-none cursor-pointer; }
+.nav-logo-img { @apply h-9 w-auto object-contain rounded-md; }
+.nav-logo-text { @apply text-xl font-black tracking-wider text-white select-none text-left uppercase; }
+.nav-logo-span { @apply bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent; }
+.nav-links-wrapper { @apply flex items-center gap-6 md:gap-8; }
+.nav-btn { @apply text-xs md:text-sm font-medium tracking-wide uppercase transition-colors duration-300 py-2 relative bg-transparent border-none cursor-pointer; }
+.nav-btn-active { @apply text-blue-400; }
+.nav-btn-inactive { @apply text-slate-400 hover:text-slate-100; }
+.nav-indicator { @apply absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 to-blue-600 rounded-full; }
+
+/* Welcome Loader Animation Screen */
+.loader-container { @apply fixed inset-0 z-50 flex items-center justify-center bg-[#030712] text-white; }
+.loader-wrapper { @apply relative flex flex-col items-center; }
+.loader-text { @apply text-5xl md:text-7xl font-black tracking-widest uppercase bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent px-4 text-center select-none; }
+
+/* Hero Presentation Framework */
+.hero-container { @apply min-h-[90vh] flex flex-col justify-center px-6 max-w-5xl mx-auto relative z-10 pt-20; }
+.hero-badge { @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/5 border border-blue-500/20 text-xs font-bold tracking-widest text-blue-400 uppercase w-fit; }
+.hero-badge-dot { @apply w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse; }
+.hero-title { @apply text-5xl md:text-8xl font-black tracking-tight text-white mt-8 leading-none; }
+.hero-gradient-text { @apply bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 bg-clip-text text-transparent; }
+.hero-desc { @apply mt-8 text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl; }
+.hero-cta-group { @apply flex flex-wrap gap-4 mt-12; }
+.hero-btn-primary { @apply px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-sm uppercase tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 cursor-pointer; }
+.hero-btn-secondary { @apply px-8 py-4 bg-slate-900/40 hover:bg-slate-900/80 border border-blue-950 text-slate-200 hover:text-white font-bold text-sm uppercase tracking-widest rounded-xl transition-all duration-300 cursor-pointer; }
+
+/* About Sections Layout */
+.about-section { @apply py-32 px-6 max-w-5xl mx-auto relative z-10; }
+.about-grid { @apply grid grid-cols-1 md:grid-cols-2 gap-16 items-center; }
+.about-tag { @apply text-xs font-bold tracking-widest text-blue-400 uppercase bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 w-fit; }
+.about-heading { @apply text-4xl md:text-5xl font-black text-white mt-6 tracking-tight leading-tight; }
+.about-paragraph { @apply mt-6 text-slate-400 font-light leading-relaxed text-base; }
+.about-card-stack { @apply space-y-6; }
+.about-mini-card { @apply p-6 bg-blue-950/10 backdrop-blur-sm rounded-2xl border border-blue-950/40; }
+.about-card-title { @apply text-white font-bold text-lg; }
+.about-card-desc { @apply text-slate-400 text-sm font-light mt-2 leading-relaxed; }
+
+/* Modern Bento Capabilities Grid */
+.services-section { @apply py-32 px-6 max-w-5xl mx-auto relative z-10; }
+.services-tag { @apply text-xs font-bold tracking-widest text-blue-400 uppercase bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 w-fit; }
+.services-heading { @apply text-4xl md:text-5xl font-black text-white mt-6 tracking-tight max-w-xl; }
+.bento-grid { @apply grid grid-cols-1 md:grid-cols-3 gap-6 mt-16; }
+.bento-card { @apply p-8 bg-blue-950/5 backdrop-blur-md border border-blue-950/40 rounded-3xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between hover:border-blue-900/60 cursor-pointer; }
+.card-glow { @apply absolute inset-0 bg-gradient-to-br from-blue-500/10 via-blue-600/0 to-transparent opacity-0 transition-opacity duration-500 pointer-events-none; }
+.bento-card:hover .card-glow { @apply opacity-100; }
+.bento-md-2 { @apply md:col-span-2; }
+.bento-md-1 { @apply md:col-span-1; }
+.service-num { @apply text-xs font-mono text-blue-500/60 tracking-wider font-bold; }
+.service-title { @apply text-xl font-bold text-white mt-8; }
+.service-desc { @apply text-slate-400 font-light text-sm mt-3 leading-relaxed; }
+.tech-pill-wrapper { @apply flex flex-wrap gap-2 mt-6; }
+.tech-pill { @apply text-[10px] font-bold tracking-wider font-mono uppercase px-3 py-1 bg-[#030712] text-slate-400 border border-blue-950 rounded-md; }
+
+/* Contact Structure Elements */
+.contact-section { @apply py-32 px-6 max-w-5xl mx-auto relative z-10; }
+.contact-main-grid { @apply grid grid-cols-1 lg:grid-cols-12 gap-16; }
+.contact-info-col { @apply lg:col-span-5 space-y-10; }
+.contact-section-tag { @apply text-xs font-bold tracking-widest text-blue-400 uppercase bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 w-fit; }
+.contact-main-title { @apply text-4xl font-black text-white tracking-tight mt-6; }
+.contact-main-subtitle { @apply text-slate-400 font-light mt-3 text-sm leading-relaxed; }
+.contact-info-stack { @apply space-y-6; }
+.contact-block { @apply p-6 bg-blue-950/10 border border-blue-950/40 rounded-2xl; }
+.contact-block-double { @apply p-6 bg-blue-950/10 border border-blue-950/40 rounded-2xl grid grid-cols-1 sm:grid-cols-2 gap-4; }
+.contact-label-small { @apply text-xs font-bold uppercase tracking-widest text-blue-500/60; }
+.contact-text-value { @apply text-white font-medium mt-1 select-all text-sm; }
+.contact-link-whatsapp { @apply text-blue-400 hover:text-blue-300 transition-colors font-medium mt-1 text-sm block no-underline; }
+.contact-text-address { @apply text-white font-light mt-1 text-sm leading-relaxed; }
+.contact-input-col { @apply lg:col-span-7 bg-blue-950/10 backdrop-blur-sm border border-blue-950/40 p-8 md:p-10 rounded-3xl h-full flex flex-col justify-between; }
+.contact-inputs-grid { @apply grid grid-cols-1 sm:grid-cols-2 gap-6; }
+.contact-field-group { @apply flex flex-col gap-2; }
+.contact-field-label { @apply text-xs font-bold text-slate-400 uppercase tracking-wider; }
+.contact-input-element { @apply bg-[#030712] border border-blue-950 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors w-full; }
+.contact-textarea-element { @apply bg-[#030712] border border-blue-950 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors resize-none w-full; }
+.contact-submit-btn { @apply w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-sm uppercase tracking-widest py-4 rounded-xl transition-all duration-300 mt-8 cursor-pointer; }
+
