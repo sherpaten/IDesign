@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 @layer base {
   body {
@@ -13,7 +13,7 @@
 .nav-logo-img { @apply h-9 w-auto object-contain rounded-md; }
 .nav-logo-text { @apply text-xl font-black tracking-wider text-white select-none text-left uppercase; }
 .nav-logo-span { @apply bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent; }
-.nav-links-wrapper { @apply flex items-center gap-6 md:gap-8; }
+.nav-links-wrapper { @apply hidden md:flex items-center gap-6 md:gap-8; }
 .nav-btn { @apply text-xs md:text-sm font-medium tracking-wide uppercase transition-colors duration-300 py-2 relative bg-transparent border-none cursor-pointer; }
 .nav-btn-active { @apply text-blue-400; }
 .nav-btn-inactive { @apply text-slate-400 hover:text-slate-100; }
