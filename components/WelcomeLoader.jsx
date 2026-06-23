@@ -1,4 +1,3 @@
-﻿
 'use client';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
@@ -9,21 +8,6 @@ export default function WelcomeLoader({ onComplete }) {
   const phrases = ["WELCOME TO", "THE NEW WORLD", "OF TECHNOLOGY", "iDESIGN STUDIO"];
   const audioRef = useRef(null);
 
-  // Initialize the audio track blueprint early
-  useEffect(() => {
-    const audio = new Audio('/welcome-ambient.wav');
-    audio.volume = 0.5;
-    audio.loop = true;
-    audioRef.current = audio;
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-    };
-  }, []);
-
-  // Control text rotation loop ONLY after user clicks start
   useEffect(() => {
     if (!hasStarted) return;
 
@@ -31,24 +15,35 @@ export default function WelcomeLoader({ onComplete }) {
       const timer = setTimeout(() => setTextIndex(prev => prev + 1), 1350);
       return () => clearTimeout(timer);
     } else {
-      const timer = setTimeout(() => onComplete(), 1800);
+      const timer = setTimeout(() => {
+        if (audioRef.current) {
+          audioRef.current.pause();
+        }
+        onComplete();
+      }, 1800);
       return () => clearTimeout(timer);
     }
-  }, [textIndex, hasStarted]);
+  }, [textIndex, hasStarted, onComplete]);
 
   const handleStart = () => {
     setHasStarted(true);
-    if (audioRef.current) {
-      audioRef.current.play().catch(err => {
-        console.log("Audio play blocked:", err);
+    try {
+      const audio = new Audio('/welcome-ambient.wav');
+      audio.volume = 0.5;
+      audio.loop = true;
+      audioRef.current = audio;
+      
+      audio.play().catch(err => {
+        console.log("Audio play blocked by device security profile:", err);
       });
+    } catch (error) {
+      console.error("Audio failed to initialize:", error);
     }
   };
 
   return (
     <div className="loader-container bg-[#030712] fixed inset-0 z-50 flex items-center justify-center">
       {!hasStarted ? (
-        /* Pristine Gateway Interaction Button */
         <motion.button
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -59,7 +54,6 @@ export default function WelcomeLoader({ onComplete }) {
           ENTER STUDIO
         </motion.button>
       ) : (
-        /* Cinematic Phrasing Sequence Matrix */
         <div className="loader-wrapper">
           <motion.h1 
             key={textIndex} 
@@ -76,4 +70,3 @@ export default function WelcomeLoader({ onComplete }) {
     </div>
   );
 }
-
