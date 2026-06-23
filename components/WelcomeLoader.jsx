@@ -28,7 +28,7 @@ export default function WelcomeLoader({ onComplete }) {
   const handleStart = () => {
     setHasStarted(true);
     try {
-      const audio = new Audio('/welcome-ambient.wav');
+      const audio = new Audio('./welcome-ambient.wav');
       audio.volume = 0.5;
       audio.loop = true;
       audioRef.current = audio;
