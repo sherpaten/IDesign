@@ -1,4 +1,4 @@
-﻿
+
 'use client';
 import { motion } from 'framer-motion';
 
@@ -39,13 +39,13 @@ export default function Team() {
               <motion.img 
                 src={member.img} 
                 alt={member.name}
-                className="w-full h-full object-cover filter grayscale contrast-125 transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-105"
+                className="w-full h-full object-cover filter grayscale contrast-125 transition-all duration-700 ease-out group-hover:grayscale-0 group-active:grayscale-0 group-hover:scale-105 group-active:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/80 via-transparent to-transparent pointer-events-none" />
             </div>
             
             <div className="mt-6 pl-2">
-              <h3 className="text-xl font-bold text-white tracking-wide transition-colors duration-300 group-hover:text-blue-400">
+              <h3 className="text-xl font-bold text-white tracking-wide transition-colors duration-300 group-hover:text-blue-400 group-active:text-blue-400">
                 {member.name}
               </h3>
               <p className="text-sm font-light text-slate-400 mt-1">
