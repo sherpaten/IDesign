@@ -3,24 +3,25 @@ import { motion } from 'framer-motion';
 
 export default function Contact() {
   return (
-    <section className="contact-section py-20 px-6 max-w-7xl mx-auto relative z-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <section id="contact" className="py-20 px-6 max-w-7xl mx-auto relative z-10 text-white">
+      {/* Explicit Tailwind grid mechanics override global styles layout parameters */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start w-full">
         
-        {/* Left Column: Communication Info Vectors */}
-        <div className="contact-info-col space-y-8">
+        {/* Left Side: Communication Info Vectors (Spans 5 Columns on Desktop) */}
+        <div className="lg:col-span-5 space-y-8 w-full">
           <div>
-            <span className="contact-section-tag px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 text-xs text-blue-400 font-mono uppercase tracking-widest inline-block mb-4">
+            <span className="px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 text-xs text-blue-400 font-mono uppercase tracking-widest inline-block mb-4">
               Get In Touch
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
               Let's build something legendary.
             </h2>
-            <p className="text-slate-400 mt-4 leading-relaxed max-w-md">
+            <p className="text-slate-400 mt-4 leading-relaxed">
               Reach out through our official operating channels. Our strategy desk is standing by.
             </p>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="bg-[#070b19]/30 border border-blue-950/40 rounded-2xl p-6 backdrop-blur-sm">
               <h4 className="text-xs font-mono uppercase tracking-wider text-blue-400/80">Official Communication Vector</h4>
               <a href="mailto:idesign4269@gmail.com" className="text-lg font-medium text-white hover:text-blue-400 transition-colors block mt-2">
@@ -45,8 +46,8 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Right Column: High Performance Expanded Input Form */}
-        <div className="bg-[#070b19]/40 border border-blue-950/50 rounded-3xl p-8 backdrop-blur-md w-full">
+        {/* Right Side: Proposal Input Form Component (Spans 7 Columns on Desktop) */}
+        <div className="lg:col-span-7 bg-[#070b19]/40 border border-blue-950/50 rounded-3xl p-8 backdrop-blur-md w-full">
           <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="w-full">
