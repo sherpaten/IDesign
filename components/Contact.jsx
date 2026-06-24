@@ -4,10 +4,9 @@ import { motion } from 'framer-motion';
 export default function Contact() {
   return (
     <section id="contact" className="py-20 px-6 max-w-7xl mx-auto relative z-10 text-white">
-      {/* Explicit Tailwind grid mechanics override global styles layout parameters */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start w-full">
         
-        {/* Left Side: Communication Info Vectors (Spans 5 Columns on Desktop) */}
+        {/* Left Side: Communication Info Vectors */}
         <div className="lg:col-span-5 space-y-8 w-full">
           <div>
             <span className="px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 text-xs text-blue-400 font-mono uppercase tracking-widest inline-block mb-4">
@@ -46,7 +45,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Right Side: Proposal Input Form Component (Spans 7 Columns on Desktop) */}
+        {/* Right Side: Proposal Input Form Component with Matched Studio Services */}
         <div className="lg:col-span-7 bg-[#070b19]/40 border border-blue-950/50 rounded-3xl p-8 backdrop-blur-md w-full">
           <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -69,17 +68,21 @@ export default function Contact() {
             </div>
 
             <div className="w-full">
-              <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Select Core Service</label>
+              <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Select Requested Capability</label>
               <div className="relative">
                 <select 
                   className="w-full bg-[#030712] border border-blue-950/60 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-blue-500/50 transition-colors text-sm cursor-pointer appearance-none relative z-10"
                   defaultValue=""
                 >
-                  <option value="" disabled hidden>Choose an ecosystem track...</option>
-                  <option value="web-dev" className="bg-[#030712] text-white">Next-Gen Web Development</option>
-                  <option value="ui-ux" className="bg-[#030712] text-white">Fluid UI / UX Design Architectures</option>
-                  <option value="mobile-apps" className="bg-[#030712] text-white">Cross-Platform Native Apps</option>
-                  <option value="branding" className="bg-[#030712] text-white">Digital Brand Identity Strategy</option>
+                  <option value="" disabled hidden>Choose a service channel...</option>
+                  <option value="web-architecture" className="bg-[#030712] text-white">Custom Web Architecture</option>
+                  <option value="ui-ux" className="bg-[#030712] text-white">User Interface (UI/UX) Design</option>
+                  <option value="software-engineering" className="bg-[#030712] text-white">Custom Software Engineering</option>
+                  <option value="graphic-design" className="bg-[#030712] text-white">Professional Graphic Design</option>
+                  <option value="video-editing" className="bg-[#030712] text-white">Cinematic Video Editing</option>
+                  <option value="digital-marketing" className="bg-[#030712] text-white">Digital Marketing & Brand Growth</option>
+                  <option value="seo-analytics" className="bg-[#030712] text-white">SEO Strategy & Core Analytics</option>
+                  <option value="cloud-devops" className="bg-[#030712] text-white">Cloud Optimization & DevOps</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500 z-20">
                   <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
