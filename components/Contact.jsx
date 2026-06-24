@@ -3,35 +3,41 @@ import { motion } from 'framer-motion';
 
 export default function Contact() {
   return (
-    <section className="contact-section">
-      <div className="contact-main-grid">
+    <section className="contact-section py-20 px-6 max-w-7xl mx-auto relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         
         {/* Left Column: Communication Info Vectors */}
-        <div className="contact-info-col">
+        <div className="contact-info-col space-y-8">
           <div>
-            <span className="contact-section-tag">Get In Touch</span>
-            <h2 className="contact-main-title">Let's build something legendary.</h2>
-            <p className="contact-main-subtitle">Reach out through our official operating channels. Our strategy desk is standing by.</p>
+            <span className="contact-section-tag px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 text-xs text-blue-400 font-mono uppercase tracking-widest inline-block mb-4">
+              Get In Touch
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+              Let's build something legendary.
+            </h2>
+            <p className="text-slate-400 mt-4 leading-relaxed max-w-md">
+              Reach out through our official operating channels. Our strategy desk is standing by.
+            </p>
           </div>
           
-          <div className="contact-info-stack">
-            <div className="contact-block">
-              <h4 className="contact-label-small">Official Communication Vector</h4>
-              <a href="mailto:idesign4269@gmail.com" className="contact-text-value hover:text-blue-400 transition-colors block mt-1">
+          <div className="space-y-6">
+            <div className="bg-[#070b19]/30 border border-blue-950/40 rounded-2xl p-6 backdrop-blur-sm">
+              <h4 className="text-xs font-mono uppercase tracking-wider text-blue-400/80">Official Communication Vector</h4>
+              <a href="mailto:idesign4269@gmail.com" className="text-lg font-medium text-white hover:text-blue-400 transition-colors block mt-2">
                 idesign4269@gmail.com
               </a>
             </div>
 
-            <div className="contact-block double">
-              <div>
-                <h4 className="contact-label-small">Primary Vector</h4>
-                <a href="https://wa.me/9779747457986" target="_blank" rel="noreferrer" className="contact-link-whatsapp">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-[#070b19]/30 border border-blue-950/40 rounded-2xl p-6 backdrop-blur-sm">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-blue-400/80">Primary Vector</h4>
+                <a href="https://wa.me/9779747457986" target="_blank" rel="noreferrer" className="text-white hover:text-green-400 transition-colors block mt-2 font-medium">
                   +977 9747457986
                 </a>
               </div>
-              <div>
-                <h4 className="contact-label-small">Secondary Vector</h4>
-                <a href="https://wa.me/9779818778998" target="_blank" rel="noreferrer" className="contact-link-whatsapp">
+              <div className="bg-[#070b19]/30 border border-blue-950/40 rounded-2xl p-6 backdrop-blur-sm">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-blue-400/80">Secondary Vector</h4>
+                <a href="https://wa.me/9779818778998" target="_blank" rel="noreferrer" className="text-white hover:text-green-400 transition-colors block mt-2 font-medium">
                   +977 9818778998
                 </a>
               </div>
@@ -39,56 +45,61 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Right Column: Interactive Form with Service Selector */}
-        <div className="contact-form-wrapper bg-[#070b19]/40 border border-blue-950/30 rounded-3xl p-8 backdrop-blur-sm">
+        {/* Right Column: High Performance Expanded Input Form */}
+        <div className="bg-[#070b19]/40 border border-blue-950/50 rounded-3xl p-8 backdrop-blur-md w-full">
           <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
+              <div className="w-full">
                 <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Name</label>
                 <input 
                   type="text" 
                   placeholder="Your Name" 
-                  className="w-full bg-[#030712] border border-blue-950/50 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500/50 transition-colors text-sm"
+                  className="w-full bg-[#030712] border border-blue-950/60 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500/50 transition-colors text-sm"
                 />
               </div>
-              <div>
+              <div className="w-full">
                 <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Email</label>
                 <input 
                   type="email" 
                   placeholder="name@company.com" 
-                  className="w-full bg-[#030712] border border-blue-950/50 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500/50 transition-colors text-sm"
+                  className="w-full bg-[#030712] border border-blue-950/60 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500/50 transition-colors text-sm"
                 />
               </div>
             </div>
 
-            {/* NEW: Core Service Dropdown Vector Selector */}
-            <div>
+            <div className="w-full">
               <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Select Core Service</label>
-              <select 
-                className="w-full bg-[#030712] border border-blue-950/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500/50 transition-colors text-sm cursor-pointer appearance-none"
-                style={{ backgroundImage: 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'%2364748b\'%3e%3cpath stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 9l-7 7-7-7\'/%3e%3c/svg%3e")', backgroundPosition: 'right 1rem center', backgroundSize: '1.25rem', backgroundRepeat: 'no-repeat' }}
-                defaultValue=""
-              >
-                <option value="" disabled hidden>Choose an ecosystem track...</option>
-                <option value="web-dev" className="bg-[#030712] text-white">Next-Gen Web Development</option>
-                <option value="ui-ux" className="bg-[#030712] text-white">Fluid UI / UX Design Architectures</option>
-                <option value="mobile-apps" className="bg-[#030712] text-white">Cross-Platform Native Apps</option>
-                <option value="branding" className="bg-[#030712] text-white">Digital Brand Identity Strategy</option>
-              </select>
+              <div className="relative">
+                <select 
+                  className="w-full bg-[#030712] border border-blue-950/60 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-blue-500/50 transition-colors text-sm cursor-pointer appearance-none relative z-10"
+                  defaultValue=""
+                >
+                  <option value="" disabled hidden>Choose an ecosystem track...</option>
+                  <option value="web-dev" className="bg-[#030712] text-white">Next-Gen Web Development</option>
+                  <option value="ui-ux" className="bg-[#030712] text-white">Fluid UI / UX Design Architectures</option>
+                  <option value="mobile-apps" className="bg-[#030712] text-white">Cross-Platform Native Apps</option>
+                  <option value="branding" className="bg-[#030712] text-white">Digital Brand Identity Strategy</option>
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500 z-20">
+                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                  </svg>
+                </div>
+              </div>
             </div>
 
-            <div>
+            <div className="w-full">
               <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Project Scope Description</label>
               <textarea 
-                rows="4" 
+                rows="5" 
                 placeholder="Describe what you need built under this service track..." 
-                className="w-full bg-[#030712] border border-blue-950/50 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500/50 transition-colors text-sm resize-none"
+                className="w-full bg-[#030712] border border-blue-950/60 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500/50 transition-colors text-sm resize-none"
               />
             </div>
             
             <button 
               type="submit" 
-              className="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs uppercase tracking-[0.2em] font-bold rounded-xl transition-colors cursor-pointer shadow-lg shadow-blue-600/10"
+              className="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs uppercase tracking-[0.2em] font-bold rounded-xl transition-all duration-200 cursor-pointer shadow-lg shadow-blue-600/10 active:scale-[0.99]"
             >
               Submit Proposal
             </button>
