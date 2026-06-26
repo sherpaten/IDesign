@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function WelcomeLoader({ onComplete }) {
   const [hasStarted, setHasStarted] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
-  const phrases = ["WELCOME TO", "THE NEW WORLD", "OF TECHNOLOGY", "iDESIGN STUDIO"];
+  const phrases = ["WELCOME TO", "THE NEW WORLD", "OF TECHNOLOGY", "I DESIGN STUDIO"];
   const audioRef = useRef(null);
 
   useEffect(() => {
