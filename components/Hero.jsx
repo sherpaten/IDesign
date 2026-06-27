@@ -1,23 +1,72 @@
-﻿
 'use client';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="hero-container">
-      <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <div className="hero-badge"><div className="hero-badge-dot" /> Next-Gen Development Studio</div>
-      </motion.div>
-      <motion.h1 initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="hero-title">
-        We build elite <br /><span className="hero-gradient-text">digital realities.</span>
-      </motion.h1>
-      <motion.p initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="hero-desc">
-        Handcrafting high-performance web applications, fluid interactive systems, and scalable digital architectures designed to outclass your competition.
-      </motion.p>
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="hero-cta-group">
-        <button className="hero-btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Launch Project</button>
-        <button className="hero-btn-secondary" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>Our Capabilities</button>
-      </motion.div>
+    <section id="home" className="relative bg-[#030712] pt-32 pb-20 px-6 overflow-hidden">
+      {/* Background radial gradient accent glow */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        
+        {/* Left Side text content matrix */}
+        <div className="lg:col-span-7 space-y-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+            <span className="text-[10px] font-mono uppercase tracking-widest text-blue-400 font-bold">
+              Digital Solutions That Drive Results
+            </span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight uppercase leading-[0.95]">
+            Designing Ideas.<br />
+            <span className="text-blue-600">Building Impact.</span>
+          </h1>
+
+          <p className="text-slate-400 text-base md:text-lg max-w-xl leading-relaxed">
+            We craft digital experiences, powerful brands, and intelligent solutions that help businesses grow, scale, and lead in the digital era.
+          </p>
+
+          {/* Core Action Vectors Split Triggers */}
+          <div className="flex flex-wrap gap-4 pt-2">
+            <button className="px-6 py-4 bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-colors flex items-center gap-2 cursor-pointer shadow-lg shadow-blue-600/20">
+              Explore Our Services <span>?</span>
+            </button>
+            <button className="px-6 py-4 border border-slate-800 hover:border-slate-700 bg-slate-900/40 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-colors flex items-center gap-2 cursor-pointer">
+              View Our Work <span className="text-[10px]">?</span>
+            </button>
+          </div>
+
+          {/* Social Proof Review Score Matrix */}
+          <div className="flex items-center gap-4 pt-4 border-t border-slate-900 w-fit">
+            <div className="flex -space-x-3">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="w-9 h-9 rounded-full border-2 border-[#030712] bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-400">
+                  U{i}
+                </div>
+              ))}
+            </div>
+            <div>
+              <div className="flex items-center gap-1 text-yellow-500 text-sm">
+                <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
+                <span className="text-white font-bold ml-1 text-xs font-mono">4.9/5</span>
+              </div>
+              <p className="text-slate-500 text-xs">from 120+ global reviews</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side Laptop Showcase Placeholder */}
+        <div className="lg:col-span-5 relative w-full flex justify-center">
+          <div className="relative w-full max-w-[450px] aspect-square rounded-3xl border border-blue-950/40 bg-gradient-to-b from-blue-950/20 to-slate-900/10 backdrop-blur-sm p-4 flex items-center justify-center shadow-2xl shadow-blue-900/5">
+            <div className="text-center space-y-2">
+              <span className="text-4xl">??</span>
+              <p className="text-xs font-mono text-slate-500 uppercase tracking-widest">Device Interface Render Vector</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
   );
 }
