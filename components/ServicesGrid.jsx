@@ -54,7 +54,7 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section className="bg-white py-24 px-6 text-slate-950">
+    <section className="bg-white py-24 px-6 text-slate-950 relative z-20">
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Header Block */}
@@ -70,22 +70,24 @@ export default function ServicesGrid() {
           </p>
         </div>
 
-        {/* 01-08 Layout Grid with Card Images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 01-08 Layout Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {services.map((service) => (
             <div 
               key={service.num}
-              className="border border-slate-200/60 rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col group"
+              className="border border-slate-200 rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 flex flex-col group relative"
             >
               {/* Card Header Image Section */}
-              <div className="relative aspect-[16/10] w-full bg-slate-100 overflow-hidden">
+              <div className="relative aspect-[16/10] w-full bg-slate-900 overflow-hidden">
                 <img 
                   src={service.img} 
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent z-10" />
-                <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-blue-600 font-mono font-bold px-2.5 py-1 rounded-md text-xs shadow-sm z-20">
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent z-10" />
+                
+                {/* Fixed positioning with explicit z-index prevents header tracking collision */}
+                <span className="absolute top-4 left-4 bg-blue-600 text-white font-mono font-bold px-2.5 py-1 rounded-md text-xs shadow-md z-30">
                   {service.num}
                 </span>
               </div>
@@ -93,7 +95,7 @@ export default function ServicesGrid() {
               {/* Card Content Area */}
               <div className="p-6 flex-grow flex flex-col justify-between space-y-4 bg-white relative z-20">
                 <div className="space-y-2">
-                  <h3 className="text-lg font-black tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-base font-black tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors min-h-[48px] flex items-center">
                     {service.title}
                   </h3>
                   <p className="text-xs text-slate-500 leading-relaxed">
@@ -101,8 +103,8 @@ export default function ServicesGrid() {
                   </p>
                 </div>
 
-                <div className="text-blue-600 font-mono text-sm pt-2 translate-x-[-4px] group-hover:translate-x-0 transition-all duration-300">
-                  ?
+                <div className="text-blue-600 font-mono text-xs pt-2 translate-x-[-4px] group-hover:translate-x-0 transition-all duration-300">
+                  EXPLORE TRACK ?
                 </div>
               </div>
             </div>
