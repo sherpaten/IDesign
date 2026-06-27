@@ -2,6 +2,14 @@
 import { motion } from 'framer-motion';
 
 export default function Hero() {
+  // Utility function to handle premium fluid hardware scroll interpolation
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section id="home" className="relative bg-[#030712] pt-32 pb-20 px-6 overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
@@ -26,11 +34,18 @@ export default function Hero() {
             We craft digital experiences, powerful brands, and intelligent solutions that help businesses grow, scale, and lead in the digital era.
           </p>
 
+          {/* Connected Click Interceptors */}
           <div className="flex flex-wrap gap-4 pt-2">
-            <button className="px-6 py-4 bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-colors flex items-center gap-2 cursor-pointer shadow-lg shadow-blue-600/20">
+            <button 
+              onClick={() => scrollToSection('services')}
+              className="px-6 py-4 bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-blue-600/20 active:scale-[0.98]"
+            >
               Explore Our Services <span>?</span>
             </button>
-            <button className="px-6 py-4 border border-slate-800 hover:border-slate-700 bg-slate-900/40 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-colors flex items-center gap-2 cursor-pointer">
+            <button 
+              onClick={() => scrollToSection('work')}
+              className="px-6 py-4 border border-slate-800 hover:border-slate-700 bg-slate-900/40 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center gap-2 cursor-pointer active:scale-[0.98]"
+            >
               View Our Work <span className="text-[10px]">?</span>
             </button>
           </div>
@@ -53,7 +68,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Side Upgraded Image Mockup */}
+        {/* Right Side Image Showcase */}
         <div className="lg:col-span-5 relative w-full flex justify-center">
           <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-2xl overflow-hidden border border-blue-950/50 shadow-2xl shadow-blue-500/5">
             <img 
