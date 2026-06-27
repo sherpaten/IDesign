@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Brands from "@/components/Brands";
 import ServicesGrid from "@/components/ServicesGrid";
+import Stats from "@/components/Stats";
 import About from "@/components/About";
 import Team from "@/components/Team";
 import Contact from "@/components/Contact";
@@ -18,7 +19,10 @@ export default function Home() {
         <div id="home"><Hero /></div>
         <Brands />
         <div id="about"><About /></div>
-        <div id="services"><ServicesGrid /></div>
+        <div id="services">
+          <ServicesGrid />
+          <Stats />
+        </div>
         <div id="team"><Team /></div>
         <div id="contact"><Contact /></div>
         
