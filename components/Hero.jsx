@@ -4,12 +4,11 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <section id="home" className="relative bg-[#030712] pt-32 pb-20 px-6 overflow-hidden">
-      {/* Background radial gradient accent glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         
-        {/* Left Side text content matrix */}
+        {/* Left Side text content */}
         <div className="lg:col-span-7 space-y-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10">
             <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
@@ -27,7 +26,6 @@ export default function Hero() {
             We craft digital experiences, powerful brands, and intelligent solutions that help businesses grow, scale, and lead in the digital era.
           </p>
 
-          {/* Core Action Vectors Split Triggers */}
           <div className="flex flex-wrap gap-4 pt-2">
             <button className="px-6 py-4 bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-colors flex items-center gap-2 cursor-pointer shadow-lg shadow-blue-600/20">
               Explore Our Services <span>?</span>
@@ -37,7 +35,6 @@ export default function Hero() {
             </button>
           </div>
 
-          {/* Social Proof Review Score Matrix */}
           <div className="flex items-center gap-4 pt-4 border-t border-slate-900 w-fit">
             <div className="flex -space-x-3">
               {[1, 2, 3, 4].map((i) => (
@@ -56,13 +53,15 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Side Laptop Showcase Placeholder */}
+        {/* Right Side Upgraded Image Mockup */}
         <div className="lg:col-span-5 relative w-full flex justify-center">
-          <div className="relative w-full max-w-[450px] aspect-square rounded-3xl border border-blue-950/40 bg-gradient-to-b from-blue-950/20 to-slate-900/10 backdrop-blur-sm p-4 flex items-center justify-center shadow-2xl shadow-blue-900/5">
-            <div className="text-center space-y-2">
-              <span className="text-4xl">??</span>
-              <p className="text-xs font-mono text-slate-500 uppercase tracking-widest">Device Interface Render Vector</p>
-            </div>
+          <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-2xl overflow-hidden border border-blue-950/50 shadow-2xl shadow-blue-500/5">
+            <img 
+              src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" 
+              alt="iDesign Platform Interface Showcase" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/40 via-transparent to-transparent" />
           </div>
         </div>
 
