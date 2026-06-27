@@ -1,10 +1,10 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  
+
   const links = [
     { name: 'Home', target: 'home' },
     { name: 'About', target: 'about' },
@@ -13,68 +13,83 @@ export default function Navbar() {
     { name: 'Contact', target: 'contact' },
   ];
 
+  // Track scroll position to update active states dynamically
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 120;
+      for (const link of links) {
+        const el = document.getElementById(link.target);
+        if (el && scrollPos >= el.offsetTop && scrollPos < el.offsetTop + el.offsetHeight) {
+          setActiveSection(link.target);
+          break;
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleScroll = (id) => {
+    setIsOpen(false);
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; 
-      window.scrollTo({
-        top: element.getBoundingClientRect().top + window.scrollY - offset,
-        behavior: 'smooth'
-      });
-      setActiveSection(id);
-      setIsOpen(false); // Auto-close drop-down when navigation links are clicked
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   return (
-    <header className="nav-header relative">
-      <div className="nav-container flex items-center justify-between w-full px-6 py-4">
+    <header className="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 z-40 transition-colors duration-300 shadow-sm">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
-        {/* Brand Logo Identity */}
-        <button onClick={() => handleScroll('home')} className="nav-logo-wrapper">
-          <img src="/logo.jpeg" alt="iDesign Logo" className="nav-logo-img" />
-          <span className="nav-logo-text">iDESIGN <span className="nav-logo-span">STUDIO</span></span>
-        </button>
+        {/* Brand Identity / Logo Wrapper */}
+        <div onClick={() => handleScroll('home')} className="flex items-center gap-3 cursor-pointer">
+          <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black text-sm shadow-md shadow-blue-500/20">
+            iD
+          </div>
+          <span className="text-sm font-black tracking-widest text-slate-900 font-sans uppercase">
+            IDESIGN <span className="text-blue-600">STUDIO</span>
+          </span>
+        </div>
 
-        {/* Desktop Links (Hidden on mobile via globals.css .nav-links-wrapper rule changes) */}
-        <nav className="nav-links-wrapper hidden md:flex">
+        {/* Desktop Links Matrix */}
+        <nav className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <button 
-              key={link.target} 
-              onClick={() => handleScroll(link.target)} 
-              className={`nav-btn ${activeSection === link.target ? 'nav-btn-active' : 'nav-btn-inactive'}`}
+            <button
+              key={link.target}
+              onClick={() => handleScroll(link.target)}
+              className={`font-mono text-xs uppercase tracking-widest font-bold transition-all duration-200 cursor-pointer ${
+                activeSection === link.target 
+                  ? 'text-blue-600 border-b-2 border-blue-600 pb-1' 
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
             >
               {link.name}
-              {activeSection === link.target && <div className="nav-indicator" />}
             </button>
           ))}
         </nav>
 
-        {/* Mobile Hamburger Button (Visible only on mobile viewports) */}
+        {/* Mobile Menu Action Drawer Trigger */}
         <button 
-          onClick={() => setIsOpen(!isOpen)} 
-          className="md:hidden block text-white focus:outline-none z-50 p-2 cursor-pointer"
-          aria-label="Toggle Menu"
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden p-2 text-slate-900 hover:text-blue-600 transition-colors cursor-pointer"
         >
-          <svg className="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-            {isOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
+          <div className="w-6 h-5 flex flex-col justify-between">
+            <span className={`h-0.5 w-full bg-current rounded transition-transform ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`h-0.5 w-full bg-current rounded transition-opacity ${isOpen ? 'opacity-0' : ''}`} />
+            <span className={`h-0.5 w-full bg-current rounded transition-transform ${isOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          </div>
         </button>
       </div>
 
       {/* Mobile Vertical Dropdown Menu Drawer Section */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#030712]/95 border-b border-blue-950/40 backdrop-blur-md flex flex-col items-center py-6 space-y-4 md:hidden z-50 transition-all duration-300 ease-in-out">
+        <div className="absolute top-full left-0 w-full bg-white border-b border-slate-100 flex flex-col items-center py-6 space-y-4 md:hidden shadow-lg z-50">
           {links.map((link) => (
             <button
               key={link.target}
               onClick={() => handleScroll(link.target)}
-              className={`text-lg font-mono tracking-wider transition-colors duration-200 uppercase ${
-                activeSection === link.target ? 'text-blue-400' : 'text-slate-400'
+              className={`text-sm font-mono tracking-wider transition-colors uppercase font-bold py-2 ${
+                activeSection === link.target ? 'text-blue-600' : 'text-slate-600'
               }`}
             >
               {link.name}
