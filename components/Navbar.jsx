@@ -13,7 +13,6 @@ export default function Navbar() {
     { name: 'Contact', target: 'contact' },
   ];
 
-  // Track scroll position to update active states dynamically
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + 120;
@@ -41,10 +40,14 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 z-40 transition-colors duration-300 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
-        {/* Brand Identity / Logo Wrapper */}
-        <div onClick={() => handleScroll('home')} className="flex items-center gap-3 cursor-pointer">
-          <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black text-sm shadow-md shadow-blue-500/20">
-            iD
+        {/* Brand Identity / Image Logo Layout Vector */}
+        <div onClick={() => handleScroll('home')} className="flex items-center gap-3 cursor-pointer group">
+          <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:scale-102 transition-transform shadow-sm">
+            <img 
+              src="/logo.jpg" 
+              alt="iDesign Studio Logo" 
+              className="w-full h-full object-cover"
+            />
           </div>
           <span className="text-sm font-black tracking-widest text-slate-900 font-sans uppercase">
             IDESIGN <span className="text-blue-600">STUDIO</span>
