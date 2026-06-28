@@ -10,7 +10,7 @@ export default function Team() {
       img: "/Tenzing.jpg" 
     },
     { 
-      name: "Dawa Tamang", 
+      name: "Dawa Theeng", 
       role: "COO / President & Developer", 
       img: "/Dawa.jpeg" 
     }
