@@ -46,19 +46,19 @@ export default function Team() {
           </p>
         </div>
 
-        {/* 4-Column Balanced Grid with Accurate Extensions */}
+        {/* 4-Column Balanced Grid with Grayscale to Color Interaction */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {team.map((member, idx) => (
             <div 
               key={idx} 
-              className="group bg-slate-900/20 border border-slate-900 hover:border-blue-500/20 rounded-2xl p-4 space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/[0.02]"
+              className="group cursor-pointer bg-slate-900/20 border border-slate-900 hover:border-blue-500/20 rounded-2xl p-4 space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/[0.02]"
             >
               {/* Profile Image Viewport Container */}
               <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-950 border border-slate-800">
                 <img 
                   src={member.img} 
                   alt={member.name}
-                  className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                  className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transform group-hover:scale-105 transition-all duration-500 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-85 z-10" />
                 <div className="absolute bottom-3 left-3 z-20">
