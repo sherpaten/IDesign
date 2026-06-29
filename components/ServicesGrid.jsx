@@ -14,7 +14,7 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section id="services" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900">
+    <section id="services" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900/60">
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Header Block */}
@@ -30,26 +30,27 @@ export default function ServicesGrid() {
           </p>
         </div>
 
-        {/* Upgraded Typography Layout Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Fixed Standard Flow Grid Grid: Fully Visible on Web & Mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full relative">
           {services.map((svc, idx) => (
             <div 
               key={idx} 
-              className="group bg-slate-900/10 border border-slate-900/60 hover:border-blue-500/20 rounded-2xl p-6 space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/[0.01]"
+              className="group bg-slate-900/20 border border-slate-900/80 hover:border-blue-500/20 rounded-2xl p-6 space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/[0.01]"
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-blue-500 bg-blue-950/40 border border-blue-950 px-2 py-0.5 rounded">
+                <span className="text-xs font-mono font-bold text-blue-500 bg-blue-950/40 border border-blue-900/30 px-2 py-0.5 rounded">
                   {svc.num}
                 </span>
                 <div className="w-1.5 h-1.5 rounded-full bg-slate-800 group-hover:bg-blue-500 transition-colors" />
               </div>
 
-              {/* Bounded Text Units: explicitly larger on tiny screen layouts */}
+              {/* Enhanced Font Sizing Engine */}
               <div className="space-y-2">
-                <h3 className="text-base sm:text-lg font-black tracking-tight text-white group-hover:text-blue-500 transition-colors">
+                <h3 className="text-lg font-black tracking-tight text-white group-hover:text-blue-500 transition-colors">
                   {svc.title}
                 </h3>
-                <p className="text-sm sm:text-xs text-slate-400 leading-relaxed font-normal">
+                {/* Bumped text font configuration on mobile from text-xs up to an easy-to-read text-base */}
+                <p className="text-base sm:text-xs text-slate-400 leading-relaxed font-normal transition-colors group-hover:text-slate-300">
                   {svc.desc}
                 </p>
               </div>
