@@ -14,8 +14,15 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section id="services" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900/60">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section id="services" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900/60 transition-all duration-300">
+      
+      {/* Structural Ambient Background Image Layer - Swapped from Unsplash to permanent local path */}
+      <div 
+        className="absolute inset-0 opacity-5 bg-cover bg-center bg-no-repeat pointer-events-none mix-blend-overlay"
+        style={{ backgroundImage: "url('/services-bg.jpg')" }}
+      />
+
+      <div className="max-w-7xl mx-auto space-y-16 relative z-10">
         
         {/* Header Block */}
         <div className="text-center space-y-3">
@@ -30,8 +37,8 @@ export default function ServicesGrid() {
           </p>
         </div>
 
-        {/* Fixed Standard Flow Grid Grid: Fully Visible on Web & Mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full relative">
+        {/* Services Layout Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {services.map((svc, idx) => (
             <div 
               key={idx} 
@@ -44,12 +51,11 @@ export default function ServicesGrid() {
                 <div className="w-1.5 h-1.5 rounded-full bg-slate-800 group-hover:bg-blue-500 transition-colors" />
               </div>
 
-              {/* Enhanced Font Sizing Engine */}
+              {/* Enhanced Typography Content */}
               <div className="space-y-2">
                 <h3 className="text-lg font-black tracking-tight text-white group-hover:text-blue-500 transition-colors">
                   {svc.title}
                 </h3>
-                {/* Bumped text font configuration on mobile from text-xs up to an easy-to-read text-base */}
                 <p className="text-base sm:text-xs text-slate-400 leading-relaxed font-normal transition-colors group-hover:text-slate-300">
                   {svc.desc}
                 </p>
