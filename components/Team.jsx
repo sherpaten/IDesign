@@ -11,7 +11,7 @@ export default function Team() {
     },
     {
       name: 'Dawa',
-      role: 'Co-Founder & UI/UX Director',
+      role: 'Co-Founder & Creative Director',
       img: '/Dawa.jpeg',
       bio: 'Visual experience designer shaping beautiful premium frontend user interfaces and vector layouts.'
     },
@@ -24,7 +24,7 @@ export default function Team() {
     {
       name: 'Rekha Bhandari',
       role: 'Marketing Head / Market Analyst',
-      img: '/Rhekha.jpeg',
+      img: '/Rekha.jpeg',
       bio: 'Data-driven brand strategist managing market analysis vectors, user acquisition channels, and conversion growth maps.'
     }
   ];
