@@ -22,7 +22,7 @@ export default function Team() {
       bio: 'Strategic technical visionary overseeing engineering frameworks, infrastructure planning, and long-term tech scaling.'
     },
     {
-      name: 'Rhekha',
+      name: 'Rekha Bhandari',
       role: 'Marketing Head / Market Analyst',
       img: '/Rhekha.jpeg',
       bio: 'Data-driven brand strategist managing market analysis vectors, user acquisition channels, and conversion growth maps.'
