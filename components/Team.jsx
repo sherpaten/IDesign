@@ -39,7 +39,7 @@ export default function Team() {
             Expert Leadership
           </span>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight uppercase text-white">
-            Meet The Core Team
+            Meet The Brains Behind IDesign Studio
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto text-xs md:text-sm">
             The driving force behind software innovation, strategic development, and growth operations at IDesign Studio.
