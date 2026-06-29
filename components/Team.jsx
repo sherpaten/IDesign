@@ -46,27 +46,19 @@ export default function Team() {
           </p>
         </div>
 
-        {/* Upgraded Balanced 4-Column Layout Grid */}
+        {/* 4-Column Balanced Grid with Accurate Extensions */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {team.map((member, idx) => (
             <div 
               key={idx} 
               className="group bg-slate-900/20 border border-slate-900 hover:border-blue-500/20 rounded-2xl p-4 space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/[0.02]"
             >
-              {/* Profile Image Container */}
+              {/* Profile Image Viewport Container */}
               <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-950 border border-slate-800">
                 <img 
                   src={member.img} 
                   alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500"
-                  onError={(e) => {
-                    // Quick fallback to catch asset file extensions dynamically
-                    if (e.target.src.endsWith('.jpg')) {
-                      e.target.src = e.target.src.replace('.jpg', '.png');
-                    } else if (e.target.src.endsWith('.jpeg')) {
-                      e.target.src = e.target.src.replace('.jpeg', '.png');
-                    }
-                  }}
+                  className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-85 z-10" />
                 <div className="absolute bottom-3 left-3 z-20">
@@ -76,7 +68,7 @@ export default function Team() {
                 </div>
               </div>
 
-              {/* Text Content */}
+              {/* Profile Metadata */}
               <div className="space-y-1 px-1">
                 <h3 className="text-base font-black tracking-tight text-white group-hover:text-blue-500 transition-colors line-clamp-1">
                   {member.name}
