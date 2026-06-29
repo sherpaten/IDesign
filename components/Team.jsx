@@ -11,8 +11,18 @@ export default function Team() {
     },
     { 
       name: "Dawa Theeng", 
-      role: "COO / President & Developer", 
+      role: "Co-Founder/ COO & Developer", 
       img: "/Dawa.jpeg" 
+    }
+    {
+      name: "Pemba Gelu Sherpa",
+      role: "CTO / Advisor",
+      img: "/Pemba.jpg"
+    }
+    {
+      name: "Rhekha",
+      role: "Marketing Head/ Market Analyst",
+      img: "/Rhekha.jpg"
     }
   ];
 
