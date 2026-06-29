@@ -16,9 +16,20 @@ export default function ServicesGrid() {
   return (
     <section id="services" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900/60 overflow-hidden">
       
-      {/* Code-Based Ambient Glow Layer */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-indigo-600/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* 1. Permanent Local Background Image - Scaled perfectly for mobile and web */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="/services-bg.jpg" 
+          alt="Services Background" 
+          className="w-full h-full object-cover opacity-15 mix-blend-screen"
+        />
+        {/* Dark overlay mask to keep text hyper-readable */}
+        <div className="absolute inset-0 bg-[#030712]/40" />
+      </div>
+
+      {/* 2. Code-Based Ambient Glow Layer */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
+      <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-indigo-600/5 rounded-full blur-[100px] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto space-y-16 relative z-10">
         
