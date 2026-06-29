@@ -14,6 +14,18 @@ export default function Team() {
       role: 'Co-Founder & Creative Director',
       img: '/Dawa.jpeg',
       bio: 'Visual experience designer shaping beautiful premium frontend user interfaces and vector layouts.'
+    },
+    {
+      name: 'Pemba Gelu Sherpa',
+      role: 'CTO & Advisor',
+      img: '/Pemba.jpeg',
+      bio: 'Strategic technical visionary overseeing engineering frameworks, infrastructure planning, and long-term tech scaling.'
+    },
+    {
+      name: 'Rekha Bhandari',
+      role: 'Marketing Head / Market Analyst',
+      img: '/Rekha.jpeg',
+      bio: 'Data-driven brand strategist managing market analysis vectors, user acquisition channels, and conversion growth maps.'
     }
   ];
 
@@ -34,14 +46,14 @@ export default function Team() {
           </p>
         </div>
 
-        {/* 2-Column Responsive Layout Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        {/* 4-Column Cross-Platform Adaptive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {team.map((member, idx) => (
             <div 
               key={idx} 
-              className="group cursor-pointer bg-slate-900/20 border border-slate-900 hover:border-blue-500/20 rounded-2xl p-6 space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/[0.02]"
+              className="group cursor-pointer bg-slate-900/20 border border-slate-900 hover:border-blue-500/20 rounded-2xl p-4 space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/[0.02]"
             >
-              {/* Responsive Image Container: Full color on mobile, interactive grayscale on desktop */}
+              {/* Image Frame Container: Full color on mobile, interactive grayscale on web desktop mouseover */}
               <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-950 border border-slate-800">
                 <img 
                   src={member.img} 
@@ -56,7 +68,7 @@ export default function Team() {
                 </div>
               </div>
 
-              {/* Profile Metadata */}
+              {/* Profile Text Metadata Meta Blocks */}
               <div className="space-y-1 px-1">
                 <h3 className="text-base font-black tracking-tight text-white group-hover:text-blue-500 transition-colors line-clamp-1">
                   {member.name}
@@ -64,7 +76,7 @@ export default function Team() {
                 <p className="text-[11px] text-slate-400 font-mono font-semibold min-h-[16px]">
                   {member.role}
                 </p>
-                <p className="text-xs text-slate-500 leading-relaxed pt-1">
+                <p className="text-xs text-slate-500 leading-relaxed pt-1 line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
                   {member.bio}
                 </p>
               </div>
