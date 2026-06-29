@@ -30,7 +30,7 @@ export default function Team() {
   ];
 
   return (
-    <section id="team" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900">
+    <section id="team" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900 select-none">
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Section Header */}
@@ -46,19 +46,19 @@ export default function Team() {
           </p>
         </div>
 
-        {/* 4-Column Cross-Platform Adaptive Grid */}
+        {/* 4-Column Hybrid Interaction Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {team.map((member, idx) => (
             <div 
               key={idx} 
-              className="group cursor-pointer bg-slate-900/20 border border-slate-900 hover:border-blue-500/20 rounded-2xl p-4 space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/[0.02]"
+              className="group cursor-pointer bg-slate-900/20 border border-slate-900 hover:border-blue-500/20 active:border-blue-600/40 rounded-2xl p-4 space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/[0.02] active:scale-98 transform"
             >
-              {/* Image Frame Container: Full color on mobile, interactive grayscale on web desktop mouseover */}
-              <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-950 border border-slate-800">
+              {/* Image Frame Container: Interactive mouse-hover on desktop, tactile elastic tap response on mobile */}
+              <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-950 border border-slate-800 tracking-normal overflow-hidden">
                 <img 
                   src={member.img} 
                   alt={member.name}
-                  className="w-full h-full object-cover object-top grayscale-0 max-lg:grayscale-0 lg:grayscale lg:group-hover:grayscale-0 transform lg:group-hover:scale-105 transition-all duration-500 ease-out"
+                  className="w-full h-full object-cover object-top transform transition-all duration-500 ease-out max-lg:grayscale-0 lg:grayscale lg:group-hover:grayscale-0 lg:group-hover:scale-105 group-active:scale-95 group-active:grayscale"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-85 z-10" />
                 <div className="absolute bottom-3 left-3 z-20">
@@ -68,8 +68,8 @@ export default function Team() {
                 </div>
               </div>
 
-              {/* Profile Text Metadata Meta Blocks */}
-              <div className="space-y-1 px-1">
+              {/* Profile Text Metadata */}
+              <div className="space-y-1 px-1 transition-transform duration-300 group-active:translate-y-0.5">
                 <h3 className="text-base font-black tracking-tight text-white group-hover:text-blue-500 transition-colors line-clamp-1">
                   {member.name}
                 </h3>
