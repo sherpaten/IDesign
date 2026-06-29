@@ -18,13 +18,13 @@ export default function Team() {
     {
       name: 'Pemba Gelu Sherpa',
       role: 'CTO & Advisor',
-      img: '/Pemba.jpg',
+      img: '/Pemba.jpeg',
       bio: 'Strategic technical visionary overseeing engineering frameworks, infrastructure planning, and long-term tech scaling.'
     },
     {
       name: 'Rhekha',
       role: 'Marketing Head / Market Analyst',
-      img: '/Rhekha.jpg',
+      img: '/Rhekha.jpeg',
       bio: 'Data-driven brand strategist managing market analysis vectors, user acquisition channels, and conversion growth maps.'
     }
   ];
