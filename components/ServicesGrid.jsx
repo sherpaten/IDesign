@@ -14,13 +14,11 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section id="services" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900/60 transition-all duration-300">
+    <section id="services" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900/60 overflow-hidden">
       
-      {/* Structural Ambient Background Image Layer - Swapped from Unsplash to permanent local path */}
-      <div 
-        className="absolute inset-0 opacity-5 bg-cover bg-center bg-no-repeat pointer-events-none mix-blend-overlay"
-        style={{ backgroundImage: "url('/services-bg.jpg')" }}
-      />
+      {/* Code-Only Ambient Glow Layer: Completely removes the need for an image asset file */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-indigo-600/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto space-y-16 relative z-10">
         
@@ -51,11 +49,12 @@ export default function ServicesGrid() {
                 <div className="w-1.5 h-1.5 rounded-full bg-slate-800 group-hover:bg-blue-500 transition-colors" />
               </div>
 
-              {/* Enhanced Typography Content */}
+              {/* Dynamic Typography Content */}
               <div className="space-y-2">
                 <h3 className="text-lg font-black tracking-tight text-white group-hover:text-blue-500 transition-colors">
                   {svc.title}
                 </h3>
+                {/* Safe, highly legible description text sizing ready for mobile and web */}
                 <p className="text-base sm:text-xs text-slate-400 leading-relaxed font-normal transition-colors group-hover:text-slate-300">
                   {svc.desc}
                 </p>
