@@ -16,16 +16,13 @@ export default function ServicesGrid() {
   return (
     <section id="services" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900/60 overflow-hidden">
       
-      {/* 1. Permanent Local Background Image - Scaled perfectly for mobile and web */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <img 
-          src="/services-bg.jpg" 
-          alt="Services Background" 
-          className="w-full h-full object-cover opacity-15 mix-blend-screen"
-        />
-        {/* Dark overlay mask to keep text hyper-readable */}
-        <div className="absolute inset-0 bg-[#030712]/40" />
-      </div>
+      {/* 1. Direct Web-Link Background Overlay with CSS Fail-safe Gradient */}
+      <div 
+        className="absolute inset-0 z-0 pointer-events-none opacity-10 bg-cover bg-center bg-no-repeat mix-blend-screen"
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop'), linear-gradient(to bottom, #030712, #0b1528)" 
+        }}
+      />
 
       {/* 2. Code-Based Ambient Glow Layer */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
