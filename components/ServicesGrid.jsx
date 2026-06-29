@@ -16,7 +16,7 @@ export default function ServicesGrid() {
   return (
     <section id="services" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900/60 overflow-hidden">
       
-      {/* Code-Only Ambient Glow Layer: Completely removes the need for an image asset file */}
+      {/* Code-Only Ambient Glow Layer: Beautiful background that never breaks */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-indigo-600/5 rounded-full blur-[100px] pointer-events-none" />
 
@@ -54,7 +54,7 @@ export default function ServicesGrid() {
                 <h3 className="text-lg font-black tracking-tight text-white group-hover:text-blue-500 transition-colors">
                   {svc.title}
                 </h3>
-                {/* Safe, highly legible description text sizing ready for mobile and web */}
+                {/* Clean string text sizes for crisp mobile font scaling */}
                 <p className="text-base sm:text-xs text-slate-400 leading-relaxed font-normal transition-colors group-hover:text-slate-300">
                   {svc.desc}
                 </p>
