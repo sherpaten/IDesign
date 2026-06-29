@@ -2,8 +2,8 @@
 import { useState } from 'react';
 
 export default function Team() {
-  // Track which card is clicked/active on touch devices
-  const [activeMember, setActiveMember] = useState(null);
+  // Track active touch/press state natively for mobile viewports
+  const [pressedMember, setPressedMember] = useState(null);
 
   const team = [
     {
@@ -36,11 +36,6 @@ export default function Team() {
     }
   ];
 
-  const handleTouch = (id) => {
-    // If user clicks the already active card, reset it; otherwise set the new card active
-    setActiveMember(activeMember === id ? null : id);
-  };
-
   return (
     <section id="team" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900 select-none">
       <div className="max-w-7xl mx-auto space-y-16">
@@ -61,14 +56,15 @@ export default function Team() {
         {/* 4-Column High-Performance Unified Animation Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {team.map((member) => {
-            const isSelected = activeMember === member.id;
+            const isPressed = pressedMember === member.id;
             
             return (
               <div 
                 key={member.id} 
-                onClick={() => handleTouch(member.id)}
-                className={`group cursor-pointer bg-slate-900/20 border rounded-2xl p-4 space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/[0.02] ${
-                  isSelected ? 'border-blue-500/40 scale-102 shadow-xl shadow-blue-600/[0.02]' : 'border-slate-900 hover:border-blue-500/20'
+                onTouchStart={() => setPressedMember(member.id)}
+                onTouchEnd={() => setPressedMember(null)}
+                className={`group cursor-pointer bg-slate-900/20 border rounded-2xl p-4 space-y-4 transition-all duration-300 lg:hover:shadow-xl lg:hover:shadow-blue-600/[0.02] ${
+                  isPressed ? 'border-blue-500/40 scale-102 shadow-xl shadow-blue-600/[0.02]' : 'border-slate-900 lg:hover:border-blue-500/20'
                 }`}
               >
                 {/* Image Viewport Container */}
@@ -76,8 +72,8 @@ export default function Team() {
                   <img 
                     src={member.img} 
                     alt={member.name}
-                    className={`w-full h-full object-cover object-top transform transition-all duration-500 ease-out lg:grayscale lg:group-hover:grayscale-0 lg:group-hover:scale-105 ${
-                      isSelected ? 'grayscale-0 scale-105' : 'max-lg:grayscale'
+                    className={`w-full h-full object-cover object-top transform transition-all duration-500 ease-out grayscale group-hover:grayscale-0 lg:group-hover:scale-105 ${
+                      isPressed ? '!grayscale-0 scale-105' : 'grayscale'
                     }`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-85 z-10" />
@@ -91,7 +87,7 @@ export default function Team() {
                 {/* Profile Text Details */}
                 <div className="space-y-1 px-1">
                   <h3 className={`text-base font-black tracking-tight text-white transition-colors ${
-                    isSelected ? 'text-blue-500' : 'group-hover:text-blue-500'
+                    isPressed ? 'text-blue-500' : 'group-hover:text-blue-500'
                   }`}>
                     {member.name}
                   </h3>
@@ -99,7 +95,7 @@ export default function Team() {
                     {member.role}
                   </p>
                   <p className={`text-xs text-slate-500 leading-relaxed pt-1 transition-all duration-300 ${
-                    isSelected ? 'line-clamp-none' : 'line-clamp-3 lg:group-hover:line-clamp-none'
+                    isPressed ? 'line-clamp-none' : 'line-clamp-3 lg:group-hover:line-clamp-none'
                   }`}>
                     {member.bio}
                   </p>
