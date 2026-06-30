@@ -14,55 +14,55 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section id="services" className="bg-[#030712] py-24 px-6 text-white relative z-20 border-t border-slate-900/60 overflow-hidden">
+    <section id="services" className="bg-white py-24 px-6 text-slate-900 relative z-20 border-t border-slate-100 overflow-hidden">
       
-      {/* 1. Direct Web-Link Background Overlay with CSS Fail-safe Gradient */}
-      <div 
-        className="absolute inset-0 z-0 pointer-events-none opacity-10 bg-cover bg-center bg-no-repeat mix-blend-screen"
-        style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop'), linear-gradient(to bottom, #030712, #0b1528)" 
-        }}
-      />
+      {/* 1. Working Background Picture Layer - Stable Unsplash Source API */}
+      <div className="absolute inset-0 z-0 pointer-events-none select-none">
+        <img 
+          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop" 
+          alt="Services Tech Matrix Graphic" 
+          className="w-full h-full object-cover opacity-[0.25] mix-blend-multiply"
+        />
+      </div>
 
-      {/* 2. Code-Based Ambient Glow Layer */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
-      <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-indigo-600/5 rounded-full blur-[100px] pointer-events-none z-0" />
+      {/* 2. Soft Blue Ambient Glow Layer */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-[130px] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto space-y-16 relative z-10">
         
         {/* Header Block */}
         <div className="text-center space-y-3">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-blue-500 font-bold bg-blue-950/40 border border-blue-900/30 px-3 py-1 rounded-full">
+          <span className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600 font-bold bg-blue-50 border border-blue-100 px-3 py-1 rounded-full">
             Our Expertise
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight uppercase text-white">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight uppercase text-slate-900">
             High-Impact Capabilities
           </h2>
-          <p className="text-slate-400 max-w-xl mx-auto text-xs md:text-sm">
+          <p className="text-slate-500 max-w-xl mx-auto text-sm md:text-base">
             Professional digital engineering suites built from the ground up to empower scaling enterprises.
           </p>
         </div>
 
-        {/* Services Grid Layout */}
+        {/* 4-Column Responsive Layout Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {services.map((svc, idx) => (
             <div 
               key={idx} 
-              className="group bg-slate-900/20 border border-slate-900/80 hover:border-blue-500/20 rounded-2xl p-6 space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/[0.01]"
+              className="group bg-white/70 backdrop-blur-md border border-slate-200/60 hover:border-blue-500/30 rounded-2xl p-6 space-y-4 transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-blue-900/[0.04]"
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-blue-500 bg-blue-950/40 border border-blue-900/30 px-2 py-0.5 rounded">
+                <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">
                   {svc.num}
                 </span>
-                <div className="w-1.5 h-1.5 rounded-full bg-slate-800 group-hover:bg-blue-500 transition-colors" />
+                <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-500 transition-colors" />
               </div>
 
-              {/* Typography Content - Perfectly Scaled for Mobile/Web */}
+              {/* Dynamic Typography Content */}
               <div className="space-y-2">
-                <h3 className="text-lg font-black tracking-tight text-white group-hover:text-blue-500 transition-colors">
+                <h3 className="text-lg font-black tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
                   {svc.title}
                 </h3>
-                <p className="text-base sm:text-xs text-slate-400 leading-relaxed font-normal transition-colors group-hover:text-slate-300">
+                <p className="text-base sm:text-sm text-slate-600 leading-relaxed font-normal transition-colors">
                   {svc.desc}
                 </p>
               </div>
