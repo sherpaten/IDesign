@@ -16,17 +16,14 @@ export default function ServicesGrid() {
   return (
     <section id="services" className="bg-white py-24 px-6 text-slate-900 relative z-20 border-t border-slate-100 overflow-hidden">
       
-      {/* 1. Working Background Picture Layer - Stable Unsplash Source API */}
+      {/* Absolute Background Image Layer - Direct Link with explicit Tailwind layout tags */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         <img 
-          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop" 
-          alt="Services Tech Matrix Graphic" 
-          className="w-full h-full object-cover opacity-[0.25] mix-blend-multiply"
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop" 
+          alt="Services Background Pattern" 
+          className="w-full h-full object-cover opacity-[0.12] mix-blend-multiply"
         />
       </div>
-
-      {/* 2. Soft Blue Ambient Glow Layer */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-[130px] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto space-y-16 relative z-10">
         
@@ -43,12 +40,12 @@ export default function ServicesGrid() {
           </p>
         </div>
 
-        {/* 4-Column Responsive Layout Grid */}
+        {/* Crisp Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {services.map((svc, idx) => (
             <div 
               key={idx} 
-              className="group bg-white/70 backdrop-blur-md border border-slate-200/60 hover:border-blue-500/30 rounded-2xl p-6 space-y-4 transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-blue-900/[0.04]"
+              className="group bg-white/60 backdrop-blur-md border border-slate-200 hover:border-blue-500/30 rounded-2xl p-6 space-y-4 transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-blue-900/[0.04]"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">
@@ -57,12 +54,12 @@ export default function ServicesGrid() {
                 <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-500 transition-colors" />
               </div>
 
-              {/* Dynamic Typography Content */}
+              {/* Typography Content */}
               <div className="space-y-2">
                 <h3 className="text-lg font-black tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
                   {svc.title}
                 </h3>
-                <p className="text-base sm:text-sm text-slate-600 leading-relaxed font-normal transition-colors">
+                <p className="text-base sm:text-sm text-slate-600 leading-relaxed font-normal">
                   {svc.desc}
                 </p>
               </div>
